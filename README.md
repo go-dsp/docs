@@ -45,7 +45,6 @@ here.
 | `content/en/` | the pages; `_index.md` is the home, one directory per library, `weight` orders the sidebar |
 | `i18n/en.yaml` | the site's strings, beside the theme's |
 | `hugo.yaml` | `baseURL`, the library versions described, the navbar (version › theme › search › GitHub), the brand mounts |
-| `layouts/_partials/custom/version-select.html` | the version selector (reads `versions.json`) |
 | `layouts/_partials/custom/content-begin.html` | the outdated-version banner (reads `versions.json`) |
 | `layouts/_partials/favicons.html` | the brand's favicons |
 | `assets/css/custom.css` | the brand rose as Hextra's primary colour, the table headers |
@@ -58,7 +57,7 @@ here.
 ```sh
 git clone --recurse-submodules https://github.com/go-dsp/docs.git
 cd docs
-mkdir -p data && sh themes/hextra/scripts/page-history.sh > data/pagehistory.json
+mkdir -p data && go run github.com/tannevaled/hextra/cmd/pagehistory@v0.21.0 > data/pagehistory.json
 hugo server --baseURL http://localhost:1313/docs/0.1/
 ```
 
